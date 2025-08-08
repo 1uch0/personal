@@ -3,22 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My World</title>
+    <title>Luis A. Estrada Jimenez</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
             color: #333;
-            text-align: center;
-            margin-top: 20%;
         }
-        h1 {
-            font-size: 2.5em;
-            color: #2e8b57;
+        header {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        header h1 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .intro {
+            text-align: center;
+        }
+        .intro h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        .photo {
+            width: 180px;
+            height: 180px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 1rem auto;
+        }
+        section {
+            margin-top: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        section h3 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            margin: 2rem 0;
+        }
+        @media (max-width: 600px) {
+            .intro h2 {
+                font-size: 2rem;
+            }
+            nav {
+                margin-top: 0.5rem;
+            }
+            nav a {
+                margin: 0 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Hi, I am Luis Estrada Jimenez. Welcome to my world!</h1>
+    <header>
+        <h1>Luis A. Estrada Jimenez</h1>
+        <nav>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#consulting">Consulting</a>
+            <a href="#services">Services</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h2>LUIS A. ESTRADA JIMENEZ</h2>
+            <div class="photo">
+                <!-- Replace with actual image -->
+            </div>
+            <p>
+                I am a researcher and engineer passionate about smart manufacturing, robotics, and the integration of AI into industrial processes. 
+                With experience across multiple countries and cultures, I specialize in creating innovative, collaborative solutions that connect 
+                technology and people. My work spans industrial automation, bio-inspired systems, and human-machine interfaces. 
+                Driven by curiosity, I constantly seek to merge technical expertise with practical, real-world applications to enable 
+                sustainable and efficient manufacturing systems.
+            </p>
+        </div>
+
+        <section id="news">
+            <h3>News</h3>
+            <p>No recent news yet. Stay tuned!</p>
+        </section>
+
+        <section id="publications">
+            <h3>Publications</h3>
+            <ul>
+                <li>Publication 1 – <em>Details here</em></li>
+                <li>Publication 2 – <em>Details here</em></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=YourID" target="_blank">View Profile</a></p>
+        </section>
+    </main>
+
+    <footer>
+        Last update: August 8, 2025
+    </footer>
 </body>
 </html>
+
