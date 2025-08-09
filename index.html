@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luis A. Estrada Jimenez</title>
+    <meta name="description" content="Personal website of Luis A. Estrada Jimenez - researcher in smart manufacturing, robotics, and AI integration into industrial processes.">
     <style>
         body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -11,6 +12,7 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #1a1a1a;
@@ -19,6 +21,9 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             color: white;
@@ -50,9 +55,12 @@
         .photo {
             width: 180px;
             height: 200px;
-            background-color: #ccc;
-            border-radius: 50%;
             margin: 1rem auto;
+        }
+        .photo img {
+            width: 180px;
+            height: 200px;
+            border-radius: 50%;
         }
         section {
             margin-top: 2rem;
@@ -60,17 +68,47 @@
             padding: 1rem;
             border-radius: 8px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        section:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
         }
         section h3 {
             border-bottom: 2px solid #ddd;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
         }
         footer {
             text-align: center;
             font-size: 0.8rem;
             color: #777;
             margin: 2rem 0;
+        }
+        .back-to-top {
+            display: block;
+            text-align: right;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .back-to-top a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .back-to-top a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 0 0.5rem;
+            }
+            .intro h2 {
+                font-size: 2.5rem;
+            }
         }
         @media (max-width: 600px) {
             .intro h2 {
@@ -84,6 +122,16 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("section h3").forEach(h3 => {
+                h3.addEventListener("click", () => {
+                    const next = h3.nextElementSibling;
+                    if (next) next.classList.toggle("hidden");
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -101,7 +149,7 @@
         <div class="intro">
             <h2>LUIS A. ESTRADA JIMENEZ</h2>
             <div class="photo">
-                <img src="foto.PNG" alt="Luis A. Estrada Jimenez" style="width:180px; height:200px; border-radius:50%;">
+                <img src="foto.PNG" alt="Portrait of Luis A. Estrada Jimenez, researcher in smart manufacturing">
             </div>
             <p>
                 I am a researcher and engineer passionate about smart manufacturing, robotics, and the integration of AI into industrial processes. 
@@ -115,57 +163,38 @@
         <section id="news">
             <h3>News</h3>
             <p>No recent news yet. Stay tuned!</p>
+            <div class="back-to-top"><a href="#">↑ Back to top</a></div>
         </section>
 
         <section id="publications">
             <h3>Publications</h3>
             <ul>
-
-
-              <li>
-                  Large Language Models to Support Altruistic Collaborative Healing in Smart Manufacturing
-                  <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_5" target="_blank">Read more</a></em>
-              
-              </li>
-
-                
-              <li>
-                Towards Implementing Altruistic Collaborative Healing: Context, Simulation, and Analysis 
-                <em><a href="https://ieeexplore.ieee.org/document/10890982" target="_blank">Read more</a></em>
-              </li>
-
-                
-              <li>
-                An Access Control Method Against Unauthorized and Noncompliant Behaviors Leveraging Large Language Models 
-                <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_3" target="_blank">Read more</a></em>
-              </li>
-  
-              <li>
-                  An Altruistic-based Framework to Support Collaborative Healing of Manufacturing Resources in a Self-organized Shop-floor
-                <em>
-                    <a href="https://ieeexplore.ieee.org/document/10379803" target="_blank">Read more</a>
-                </em>              
-              
-              </li>
-  
-              <li>
-                  Self-organization in Smart Manufacturing – Background, Systematic Review, Challenges, and Outlook
-                <em>
-                    <a href="https://ieeexplore.ieee.org/document/10029369" target="_blank">Read more</a>
-                </em>   
-              
-              </li>
-  
-              <li>
-                  Gesture Recognition and Machine Learning Applied to Sign Language Translation
-
-                <em>
-                    <a href="https://link.springer.com/chapter/10.1007/978-981-10-4086-3_59" target="_blank">Read more</a>
-                </em>  
-                  
-              </li>             
-         
+                <li>
+                    Large Language Models to Support Altruistic Collaborative Healing in Smart Manufacturing
+                    <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_5" target="_blank">Read more</a></em>
+                </li>
+                <li>
+                    Towards Implementing Altruistic Collaborative Healing: Context, Simulation, and Analysis 
+                    <em><a href="https://ieeexplore.ieee.org/document/10890982" target="_blank">Read more</a></em>
+                </li>
+                <li>
+                    An Access Control Method Against Unauthorized and Noncompliant Behaviors Leveraging Large Language Models 
+                    <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_3" target="_blank">Read more</a></em>
+                </li>
+                <li>
+                    An Altruistic-based Framework to Support Collaborative Healing of Manufacturing Resources in a Self-organized Shop-floor
+                    <em><a href="https://ieeexplore.ieee.org/document/10379803" target="_blank">Read more</a></em>
+                </li>
+                <li>
+                    Self-organization in Smart Manufacturing – Background, Systematic Review, Challenges, and Outlook
+                    <em><a href="https://ieeexplore.ieee.org/document/10029369" target="_blank">Read more</a></em>
+                </li>
+                <li>
+                    Gesture Recognition and Machine Learning Applied to Sign Language Translation
+                    <em><a href="https://link.springer.com/chapter/10.1007/978-981-10-4086-3_59" target="_blank">Read more</a></em>
+                </li>             
             </ul>
+            <div class="back-to-top"><a href="#">↑ Back to top</a></div>
         </section>
 
         <section id="contact">
@@ -173,6 +202,7 @@
             <p>Email: <a href="mailto:la.estrada.jimenez@gmail.com" target="_blank">email</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-alberto-estrada-49b352a3/" target="_blank">View Profile</a></p>
             <p>Google Scholar: <a href="https://scholar.google.com/citations?user=XBEeIOcAAAAJ&hl=en" target="_blank">View Profile</a></p>
+            <div class="back-to-top"><a href="#">↑ Back to top</a></div>
         </section>
     </main>
 
@@ -181,7 +211,5 @@
     </footer>
 </body>
 </html>
-
-
 
 
