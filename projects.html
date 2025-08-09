@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Luis A. Estrada Jimenez</title>
+    <meta name="description" content="Projects by Luis A. Estrada Jimenez - smart manufacturing, robotics, AI integration into industrial processes.">
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        header h1 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.2s ease-in-out;
+        }
+        .project:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        .project img {
+            width: 100%;
+            max-width: 300px;
+            object-fit: cover;
+        }
+        .project-content {
+            padding: 1rem;
+            flex: 1;
+        }
+        .project-content h2 {
+            margin-top: 0;
+        }
+        @media (max-width: 700px) {
+            .project {
+                flex-direction: column;
+            }
+            .project img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projects</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="technicalwriting.html">Technical Writing</a>            
+            <a href="consulting.html">Consulting</a>
+            <a href="services.html">Services</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project">
+            <img src="project1.jpg" alt="Project 1 image">
+            <div class="project-content">
+                <h2>Project Title 1</h2>
+                <p>
+                    Short description of the project goes here. Mention the main goal, the technology used, and the impact it had.
+                </p>
+            </div>
+        </section>
+
+        <section class="project">
+            <img src="project2.jpg" alt="Project 2 image">
+            <div class="project-content">
+                <h2>Project Title 2</h2>
+                <p>
+                    Brief overview of the project. Include key results, unique methods, and potential applications in real-world scenarios.
+                </p>
+            </div>
+        </section>
+
+        <section class="project">
+            <img src="project3.jpg" alt="Project 3 image">
+            <div class="project-content">
+                <h2>Project Title 3</h2>
+                <p>
+                    A quick summary of the project’s purpose, the approach taken, and what was achieved during its execution.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align:center; font-size:0.8rem; color:#777; margin:2rem 0;">
+        Last update: August 8, 2025
+    </footer>
+</body>
+</html>
