@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #1a1a1a;
@@ -19,27 +20,28 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             color: white;
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin: 0;
         }
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 1.5rem;
+            font-size: 1rem;
         }
         nav a:hover {
             text-decoration: underline;
         }
         main {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
         h2 {
             border-bottom: 2px solid #ddd;
@@ -92,6 +94,7 @@
     </main>
 </body>
 </html>
+
 
 
 
