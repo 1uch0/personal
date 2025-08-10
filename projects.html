@@ -1,214 +1,194 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Luis A. Estrada Jimenez</title>
-    <meta name="description" content="Projects by Luis A. Estrada Jimenez - smart manufacturing, robotics, AI integration into industrial processes.">
-    <style>
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0; 
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #1a1a1a;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        header h1 {
-            color: white;
-            font-size: 2rem;
-            margin: 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Luis A. Estrada Jimenez</title>
+<meta name="description" content="Projects by Luis A. Estrada Jimenez - smart manufacturing, robotics, AI integration into industrial processes.">
+<style>
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0; 
+        background-color: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+    }
+    header {
+        background-color: #1a1a1a;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    header h1 {
+        color: white;
+        font-size: 2rem;
+        margin: 0;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-size: 1rem;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .project {
+        display: flex;
+        flex-wrap: wrap;
+        background: white;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+    }
+    .project:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateY(-2px);
+    }
+    .project img {
+        width: 100%;
+        max-width: 300px;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    .project-content {
+        padding: 1rem;
+        flex: 1;
+    }
+    .project-content h2 {
+        margin-top: 0;
+    }
+    @media (max-width: 700px) {
         .project {
-            display: flex;
-            flex-wrap: wrap;
-            background: white;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: all 0.2s ease-in-out;
-        }
-        .project:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
+            flex-direction: column;
         }
         .project img {
-            width: 100%;
-            max-width: 300px;
-            object-fit: cover;
+            max-width: 100%;
         }
-        .project-content {
-            padding: 1rem;
-            flex: 1;
-        }
-        .project-content h2 {
-            margin-top: 0;
-        }
-        @media (max-width: 700px) {
-            .project {
-                flex-direction: column;
-            }
-            .project img {
-                max-width: 100%;
-            }
-        }
-    </style>
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80%;
+    }
+    .modal-content, #caption {  
+        animation: zoom 0.3s;
+    }
+    @keyframes zoom {
+        from {transform: scale(0.7)} 
+        to {transform: scale(1)}
+    }
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: #ccc;
+    }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Projects</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="technicalwriting.html">Technical Writing</a>            
-            <a href="consulting.html">Consulting</a>
-            <a href="services.html">Services</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="project">
-            <img src="chatbot_LLM.png" alt="Project 1 image">
-            <div class="project-content">
-                <h2>RAG-Based Industrial Copilot for Adaptive Manufacturing Systems in Industry 4.0</h2>
-                <p>
-                    Short description of the project goes here. Mention the main goal, the technology used, and the impact it had.
-                </p>
-            </div>
-        </section>
+<header>
+    <h1>Projects</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="technicalwriting.html">Technical Writing</a>            
+        <a href="consulting.html">Consulting</a>
+        <a href="services.html">Services</a>
+    </nav>
+</header>
 
-        <section class="project">
-            <img src="accessControlProject.png" alt="Project 2 image">
-            <div class="project-content">
-                <h2>An Access Control Method Against Unauthorized and Noncompliant Behaviors Leveraging Large Language Models</h2>
-                <p>
-                    Brief overview of the project. Include key results, unique methods, and potential applications in real-world scenarios.
-                </p>
-            </div>
-        </section>
+<main>
+    <section class="project">
+        <img src="chatbot_LLM.png" alt="Project 1 image">
+        <div class="project-content">
+            <h2>RAG-Based Industrial Copilot for Adaptive Manufacturing Systems in Industry 4.0</h2>
+            <p>Short description of the project goes here...</p>
+        </div>
+    </section>
 
-        
-        <section class="project">
-            <img src="altr_project.PNG" alt="Project 3 image">
-            <div class="project-content">
-                <h2>Implementing Altruistic Collaborative Healing in Smart Manufacturing: Context, Simulation, and Analysis</h2>
-                <p>
-                    Implementing Altruistic Collaborative Healing in Smart Manufacturing: Context, Simulation, and Analysis
-                </p>
-            </div>
-        </section>
+    <section class="project">
+        <img src="accessControlProject.png" alt="Project 2 image">
+        <div class="project-content">
+            <h2>An Access Control Method Against Unauthorized and Noncompliant Behaviors Leveraging Large Language Models</h2>
+            <p>Brief overview of the project...</p>
+        </div>
+    </section>
+</main>
 
+<!-- Modal for Enlarged Image -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
 
+<footer style="text-align:center; font-size:0.8rem; color:#777; margin:2rem 0;">
+    Last update: August 8, 2025
+</footer>
 
-             <section class="project">
-            <img src="projectSentimentNews.jpg" alt="Project 4 image">
-            <div class="project-content">
-                <h2>Sentiment Analysis in Financial New</h2>
-                <p>
-                    Sentiment Analysis in Financial News
-                </p>
-            </div>
-        </section>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
 
+    // Loop through all images inside .project and add click event
+    document.querySelectorAll(".project img").forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+        }
+    });
 
+    // Close modal when clicking on X
+    document.querySelector(".close").onclick = function() {
+        modal.style.display = "none";
+    }
 
-            <section class="project">
-            <img src="DashboardPBI.png" alt="Project 5 image">
-            <div class="project-content">
-                <h2>Data Dashboard for Social Acceptance Research: Created Power BI dashboards to visualize public sentiment and stakeholder feedback on energy storage technologies</h2>
-                <p>
-                    Data Dashboard for Social Acceptance Research: Created Power BI dashboards to visualize public sentiment and stakeholder feedback on energy storage technologies 
-                </p>
-            </div>
-        </section>
+    // Close modal when clicking outside the image
+    modal.onclick = function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
-
-
-
-                <section class="project">
-            <img src="CloudasedProject.PNG" alt="Project 6 image">
-            <div class="project-content">
-                <h2>Cloud-Based Decision Making for Manufacturing Operations: Developed a System to Visualized Defective Parts using data visualization techniques and control Robots accordingly</h2>
-                <p>
-                    Cloud-Based Decision Making for Manufacturing Operations: Developed a System to Visualized Defective Parts using data visualization techniques and control Robots accordingly
-                </p>
-            </div>
-        </section>  
-
-
-
-                <section class="project">
-            <img src="Emotional analysis.PNG" alt="Project 7 image">
-            <div class="project-content">
-                <h2>Emotional Analysis in Scientific Abstracts: Conducted NLP analysis on thousands of abstracts to extract affective language trends</h2>
-                <p>
-                    Emotional Analysis in Scientific Abstracts: Conducted NLP analysis on thousands of abstracts to extract affective language trends
-                </p>
-            </div>
-        </section>
-
-
-
-                <section class="project">
-            <img src="Consitency Checking for industry.png" alt="Project 8 image">
-            <div class="project-content">
-                <h2>Concept for Efficient Exchange of Engineering Information During the Design of Process Modules</h2>
-                <p>
-                    Concept for Efficient Exchange of Engineering Information During the Design of Process Modules
-                </p>
-            </div>
-        </section>
-
-
-
-                <section class="project">
-            <img src="gestureProject.PNG" alt="Project 9 image">
-            <div class="project-content">
-                <h2>Design and Implementation of a Sensorized Glove for Sign Language Translation Using Gesture Recognition and Machine Learning</h2>
-                <p>
-                    Design and Implementation of a Sensorized Glove for Sign Language Translation Using Gesture Recognition and Machine Learning
-                </p>
-            </div>
-        </section> 
-
-
-        
-
-        
-    </main>
-
-    <footer style="text-align:center; font-size:0.8rem; color:#777; margin:2rem 0;">
-        Last update: August 8, 2025
-    </footer>
 </body>
 </html>
-
-
-
-
 
 
 
