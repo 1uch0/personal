@@ -4,118 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Luis A. Estrada Jimenez</title>
-   <style>
-    body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0; 
-        background-color: #f8f9fa;
-        color: #333;
-        line-height: 1.6;
-    }
-    header {
-        background-color: #1a1a1a;
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    header h1 {
-        color: white;
-        font-size: 2rem;
-        margin: 0;
-    }
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 1.5rem;
-        font-size: 1rem;
-    }
-    nav a:hover {
-        text-decoration: underline;
-    }
-    main {
-        max-width: 1000px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
-    .project {
-        display: flex;
-        flex-wrap: wrap;
-        background: white;
-        margin-bottom: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        overflow: hidden;
-        transition: all 0.2s ease-in-out;
-    }
-    .project:hover {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        transform: translateY(-2px);
-    }
-    .project img {
-        width: 100%;
-        max-width: 300px;
-        object-fit: cover;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-    .project-content {
-        padding: 1rem;
-        flex: 1;
-    }
-    .project-content h2 {
-        margin-top: 0;
-    }
-    @media (max-width: 700px) {
-        .project {
-            flex-direction: column;
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0; 
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
         }
-        .project img {
-            max-width: 100%;
+        header {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-    }
-
-    /* Modal Styles */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 999;
-        padding-top: 60px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.9);
-    }
-    .modal-content {
-        margin: auto;
-        display: block;
-        max-width: 90%;
-        max-height: 90%;
-    }
-    .modal-content, #caption {  
-        animation: zoom 0.3s;
-    }
-    @keyframes zoom {
-        from {transform: scale(0.7)} 
-        to {transform: scale(1)}
-    }
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 35px;
-        color: white;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    .close:hover {
-        color: #ccc;
-    }
-</style>
+        header h1 {
+            color: white;
+            font-size: 2rem;
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .chart-container {
+            background: white;
+            padding: 1rem;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+        .chart-container canvas {
+            max-height: 250px; /* smaller chart height */
+        }
+        .metrics {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .metric-box {
+            background-color: #f1f1f1;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        .metric-box h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
+        .metric-box p {
+            margin: 0.3rem 0 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.6rem;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -128,109 +96,102 @@
         </nav>
     </header>
 
+    <!-- Citation Metrics & Chart -->
+    <div class="chart-container">
+        <div class="metrics">
+            <div class="metric-box">
+                <h3>Total Citations</h3>
+                <p id="totalCitations">—</p>
+            </div>
+            <div class="metric-box">
+                <h3>h-index</h3>
+                <p id="hIndex">—</p>
+            </div>
+            <div class="metric-box">
+                <h3>i10-index</h3>
+                <p id="i10Index">—</p>
+            </div>
+        </div>
+        <h2>Citations Over the Years</h2>
+        <canvas id="citationsChart"></canvas>
+    </div>
+
     <main>
         <h2>Publications</h2>
- <ul>
-                <li>
-                    [2025] Large Language Models to Support Altruistic Collaborative Healing in Smart Manufacturing
-                    <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_5" target="_blank">Read more</a></em>
-                </li>
-                <li>
-                    [2025] Towards Implementing Altruistic Collaborative Healing: Context, Simulation, and Analysis 
-                    <em><a href="https://ieeexplore.ieee.org/document/10890982" target="_blank">Read more</a></em>
-                </li>
-                <li>
-                    [2025] An Access Control Method Against Unauthorized and Noncompliant Behaviors Leveraging Large Language Models 
-                    <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_3" target="_blank">Read more</a></em>
-                </li>
-                <li>
-                     [2024] An Altruistic-based Framework to Support Collaborative Healing of Manufacturing Resources in a Self-organized Shop-floor
-                    <em><a href="https://ieeexplore.ieee.org/document/10379803" target="_blank">Read more</a></em>
-                </li>
-
-                <li>
-                     [2024] A Systematic Review on Multimodal Emotion Recognition: Building Blocks, Current State, Applications, and Challenges
-                    <em><a href="https://ieeexplore.ieee.org/abstract/document/10602503" target="_blank">Read more</a></em>
-                </li>
-
-
-                <li>
-                     [2024] Emotional Elements in Scientific Publications' Abstracts: An Affective-Centric Experiment
-                    <em><a href="https://ieeexplore.ieee.org/abstract/document/10613557" target="_blank">Read more</a></em>
-                </li>
-     
-                <li>
-                     [2024] Multimodal Creativity State Detection from Speech and Voice
-                    <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-63851-0_8" target="_blank">Read more</a></em>
-                </li>
-     
-
-     
-                <li>
-                     [2023] Agent-based manufacturing—review and expert evaluation
-                    <em><a href="https://link.springer.com/article/10.1007/s00170-023-11517-8" target="_blank">Read more</a></em>
-                </li>     
-
-     
-                <li>
-                     [2023] Big Data Life Cycle in Shop-floor–Trends and Challenges
-                    <em><a href="https://ieeexplore.ieee.org/abstract/document/10061223" target="_blank">Read more</a></em>
-                </li>  
-     
-
-                <li>
-                     [2023] The human role in Human-centric Industry
-                    <em><a href="https://ieeexplore.ieee.org/abstract/document/9968440" target="_blank">Read more</a></em>
-                </li>  
-
-     
-                <li>
-                     [2023] Self-organization in Smart Manufacturing – Background, Systematic Review, Challenges, and Outlook
-                    <em><a href="https://ieeexplore.ieee.org/document/10029369" target="_blank">Read more</a></em>
-                </li>
-
-
-                <li>
-                     [2022] Self-configuration of a Robotic Platform to support a self-organized Manufacturing Process
-                    <em><a href="https://ieeexplore.ieee.org/abstract/document/9968868" target="_blank">Read more</a></em>
-                </li>
-     
-
-                <li>
-                     [2022] Conceptual framework for smart maintenance based on distributed intelligence
-                    <em><a href="https://www.sciencedirect.com/science/article/pii/S2405896322014094" target="_blank">Read more</a></em>
-                </li>
-
-
-                <li>
-                     [2021] Cloud based decision making for multi-agent production systems
-                    <em><a href="https://link.springer.com/chapter/10.1007/978-3-030-86230-5_53" target="_blank">Read more</a></em>
-                </li>
-
-
-                   <li>
-                     [2021] Integration of Cutting-Edge Interoperability Approaches in Cyber-Physical Production Systems and Industry 4.0
-                    <em><a href="https://www.igi-global.com/chapter/integration-of-cutting-edge-interoperability-approaches-in-cyber-physical-production-systems-and-industry-40/281772" target="_blank">Read more</a></em>
-                </li>  
-     
-
-                <li>
-                     [2021] Complexity theory and self-organization in Cyber-Physical Production Systems
-                    <em><a href="https://www.sciencedirect.com/science/article/pii/S2212827121012075" target="_blank">Read more</a></em>
-                </li>  
-
-
-     
-                <li>
-                     [2019]Gesture Recognition and Machine Learning Applied to Sign Language Translation
-                    <em><a href="https://link.springer.com/chapter/10.1007/978-981-10-4086-3_59" target="_blank">Read more</a></em>
-                </li>             
-            </ul>
+        <ul>
+            <li>[2025] Large Language Models to Support Altruistic Collaborative Healing in Smart Manufacturing <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_5" target="_blank">Read more</a></em></li>
+            <li>[2025] Towards Implementing Altruistic Collaborative Healing: Context, Simulation, and Analysis <em><a href="https://ieeexplore.ieee.org/document/10890982" target="_blank">Read more</a></em></li>
+            <li>[2025] An Access Control Method Against Unauthorized and Noncompliant Behaviors Leveraging Large Language Models <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-97051-1_3" target="_blank">Read more</a></em></li>
+            <li>[2024] An Altruistic-based Framework to Support Collaborative Healing of Manufacturing Resources in a Self-organized Shop-floor <em><a href="https://ieeexplore.ieee.org/document/10379803" target="_blank">Read more</a></em></li>
+            <li>[2024] A Systematic Review on Multimodal Emotion Recognition: Building Blocks, Current State, Applications, and Challenges <em><a href="https://ieeexplore.ieee.org/abstract/document/10602503" target="_blank">Read more</a></em></li>
+            <li>[2024] Emotional Elements in Scientific Publications' Abstracts: An Affective-Centric Experiment <em><a href="https://ieeexplore.ieee.org/abstract/document/10613557" target="_blank">Read more</a></em></li>
+            <li>[2024] Multimodal Creativity State Detection from Speech and Voice <em><a href="https://link.springer.com/chapter/10.1007/978-3-031-63851-0_8" target="_blank">Read more</a></em></li>
+            <li>[2023] Agent-based manufacturing—review and expert evaluation <em><a href="https://link.springer.com/article/10.1007/s00170-023-11517-8" target="_blank">Read more</a></em></li>
+            <li>[2023] Big Data Life Cycle in Shop-floor–Trends and Challenges <em><a href="https://ieeexplore.ieee.org/abstract/document/10061223" target="_blank">Read more</a></em></li>
+            <li>[2023] The human role in Human-centric Industry <em><a href="https://ieeexplore.ieee.org/abstract/document/9968440" target="_blank">Read more</a></em></li>
+            <li>[2023] Self-organization in Smart Manufacturing – Background, Systematic Review, Challenges, and Outlook <em><a href="https://ieeexplore.ieee.org/document/10029369" target="_blank">Read more</a></em></li>
+            <li>[2022] Self-configuration of a Robotic Platform to support a self-organized Manufacturing Process <em><a href="https://ieeexplore.ieee.org/abstract/document/9968868" target="_blank">Read more</a></em></li>
+            <li>[2022] Conceptual framework for smart maintenance based on distributed intelligence <em><a href="https://www.sciencedirect.com/science/article/pii/S2405896322014094" target="_blank">Read more</a></em></li>
+            <li>[2021] Cloud based decision making for multi-agent production systems <em><a href="https://link.springer.com/chapter/10.1007/978-3-030-86230-5_53" target="_blank">Read more</a></em></li>
+            <li>[2021] Integration of Cutting-Edge Interoperability Approaches in Cyber-Physical Production Systems and Industry 4.0 <em><a href="https://www.igi-global.com/chapter/integration-of-cutting-edge-interoperability-approaches-in-cyber-physical-production-systems-and-industry-40/281772" target="_blank">Read more</a></em></li>
+            <li>[2021] Complexity theory and self-organization in Cyber-Physical Production Systems <em><a href="https://www.sciencedirect.com/science/article/pii/S2212827121012075" target="_blank">Read more</a></em></li>
+            <li>[2019] Gesture Recognition and Machine Learning Applied to Sign Language Translation <em><a href="https://link.springer.com/chapter/10.1007/978-981-10-4086-3_59" target="_blank">Read more</a></em></li>
+        </ul>
     </main>
+
+    <script>
+        // Example citation data (replace with real data)
+        const years = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+        const citations = [10, 4, 8, 9, 33, 46, 96, 106]; 
+
+        // Calculate metrics
+        const totalCitations = citations.reduce((a, b) => a + b, 0);
+        const hIndex = 10;  // Replace with real h-index
+        const i10Index = 10; // Replace with real i10-index
+
+        // Display metrics
+        document.getElementById("totalCitations").innerText = totalCitations;
+        document.getElementById("hIndex").innerText = hIndex;
+        document.getElementById("i10Index").innerText = i10Index;
+
+        // Chart
+        const ctx = document.getElementById('citationsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Citations',
+                    data: citations,
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.parsed.y} citations`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 10 }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
-
-
 
 
 
